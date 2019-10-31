@@ -3,7 +3,7 @@
     include 'querybuilder.php';
     $orm = new  run("localhost","orm","root","");
 
-    querybuilder::select('ernsesss');
+    var_dump(querybuilder::select('users','name'));
 
 
 

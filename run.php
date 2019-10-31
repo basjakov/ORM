@@ -16,7 +16,6 @@ class run
         {
             try{
                 self::$mysql = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
-                var_dump(self::$mysql);
             }catch (Exception $e){
                 echo "Faild".$e->getMessage(PDO::FETCH_ASSOC);
             }
