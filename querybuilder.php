@@ -6,13 +6,20 @@
  * Time: 17:03
  */
 
-class querybuilder
+include 'include/where.php';
+
+
+
+final class querybuilder
 {
+        use subfunc;
+
        public static function selectdb($dbname){
-                $command = "USE $dbname;";
+                $command = "USE $dbname;".subfunc::where();
                 return run::Run($command);
        }
        public static function select($where,$column = null){
+
             if(gettype($column) == null){
                 $column = "*";
             }
@@ -20,12 +27,20 @@ class querybuilder
             return run::Run($command);
         }
 
-        public static function insert($row,$column){
-                $command = "INSERT INTO users(name,lastname,email) VALUES ('lorenso','lamas','ujextxa@gmail.com');";
+        public function insert($table,array $row ,array $column){
+
+                $command = "INSERT INTO $table($column[$row]) VALUES ($row);";
+
                 return run::Run($command);
+
         }
 
 
+
+        public static function findid($table,$id){
+                                $command = "SELECT * FROM $table WHERE 'id' == $id";
+                                return run::Run($command);
+        }
 
 
 

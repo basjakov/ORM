@@ -3,13 +3,16 @@
     include 'querybuilder.php';
     $orm = new  run("localhost","orm","root","");
 
+    $r = array(
+        'name'=>'nameaa',
+        'lastname'=>'lastnameaa',
+        'email'=>'email',
+    );
 
-    var_dump(querybuilder::insert());
-//    $k = array(
-//        'name'=>'name',
-//        'lastname'=>'lastname',
-//        'email'=>'email'
-//    );
+
+
+    var_dump(querybuilder::selectdb('users'));
+
 //    $v = array(
 //        'name'=>'arman',
 //        'lastname'=>'antonyan',
