@@ -11,14 +11,9 @@
 
 
 
-    var_dump(querybuilder::selectdb('users'));
+querybuilder::insert('users',array('name','lastname','email'),array('aaaaaaaarman','pppp','asdasd'));
 
-//    $v = array(
-//        'name'=>'arman',
-//        'lastname'=>'antonyan',
-//        'email'=>'arman.antonyan12@gmail.com'
-//    );
-//    querybuilder::select('users',$k,$v);
+
 
 
 ?>

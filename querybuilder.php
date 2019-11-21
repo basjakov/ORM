@@ -10,12 +10,12 @@ include 'include/where.php';
 
 
 
+
 final class querybuilder
 {
-        use subfunc;
 
        public static function selectdb($dbname){
-                $command = "USE $dbname;".subfunc::where();
+                $command = "USE $dbname;";
                 return run::Run($command);
        }
        public static function select($where,$column = null){
@@ -27,20 +27,23 @@ final class querybuilder
             return run::Run($command);
         }
 
-        public function insert($table,array $row ,array $column){
+        public static function insert($table,array $column,array $row){
 
-                $command = "INSERT INTO $table($column[$row]) VALUES ($row);";
+                $command = "INSERT INTO $table($column) VALUES ($row)";
 
                 return run::Run($command);
 
         }
 
 
-
         public static function findid($table,$id){
                                 $command = "SELECT * FROM $table WHERE 'id' == $id";
                                 return run::Run($command);
         }
+
+
+
+
 
 
 
